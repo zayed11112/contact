@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا | شركة السهم</title>
+    <title>الأسئلة الشائعة | شركة السهم</title>
     <style>
         * {
             margin: 0;
@@ -22,151 +22,116 @@
             max-width: 100%;
             margin: 0 auto;
             overflow: hidden;
+            padding-bottom: 30px;
         }
         
-        .company-info {
+        .header {
             background-color: #0078d4;
             color: white;
             padding: 20px;
-            border-radius: 15px;
-            margin: 15px 15px 20px;
             text-align: center;
-        }
-        
-        .company-info h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        .company-info p {
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        .section-title {
-            font-size: 22px;
-            margin: 30px 15px 20px;
-            color: #333;
-        }
-        
-        .contact-card {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .icon-container {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 15px;
-            flex-shrink: 0;
-        }
-        
-        .phone-icon {
-            background-color: #e8f5e9;
-        }
-        
-        .whatsapp-icon {
-            background-color: #e8f5e9;
-        }
-        
-        .email-icon {
-            background-color: #ffebee;
-        }
-        
-        .facebook-icon {
-            background-color: #e3f2fd;
-        }
-        
-        .instagram-icon {
-            background-color: #fce4ec;
-        }
-        
-        .contact-details {
-            flex-grow: 1;
-        }
-        
-        .contact-details h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .contact-details p {
-            color: #666;
-            font-size: 16px;
-        }
-        
-        .arrow-icon {
-            color: #999;
-            font-size: 24px;
-        }
-        
-        .developer-section {
-            text-align: center;
-            margin: 40px 0 20px;
-        }
-        
-        .developer-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-        
-        .developer-name {
-            font-size: 20px;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        
-        .developer-title {
-            color: #666;
-            font-size: 16px;
+            border-radius: 0 0 30px 30px;
             margin-bottom: 20px;
         }
         
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 20px;
+        .header-img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
         }
         
-        .social-icon {
+        .header-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .header-desc {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 90%;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .question-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .question-icon {
             width: 40px;
             height: 40px;
+            background-color: #e3f2fd;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-decoration: none;
+            color: #0078d4;
             font-size: 20px;
         }
         
-        .phone-social {
-            background-color: #4caf50;
+        .question-text {
+            font-size: 16px;
+            font-weight: 600;
         }
         
-        .whatsapp-social {
-            background-color: #25d366;
+        .arrow-icon {
+            transition: transform 0.3s;
         }
         
-        .facebook-social {
-            background-color: #1877f2;
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s, padding 0.5s;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
         }
         
-        .instagram-social {
-            background-color: #e1306c;
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 1000px;
+        }
+        
+        .faq-item.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+        
+        .answer-text {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .answer-text ul {
+            padding-right: 20px;
+            margin: 10px 0;
+        }
+        
+        .answer-text li {
+            margin-bottom: 5px;
         }
         
         @media (min-width: 768px) {
@@ -180,94 +145,319 @@
 </head>
 <body>
     <div class="container">
-        <div class="company-info">
-            <h2>شركة السهم</h2>
-            <p>نوفر أفضل خيارات السكن للطلاب والعائلات في العريش</p>
-            <p>فريقنا جاهز لمساعدتك</p>
+        <div class="header">
+            <div class="header-img">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="64" height="64">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-10.5h2v5h-2zm0-3h2v2h-2z"/>
+                </svg>
+            </div>
+            <h1 class="header-title">كيف يمكننا مساعدتك؟</h1>
+            <p class="header-desc">هنا ستجد إجابات على الأسئلة الشائعة، ويمكنك التواصل معنا في حال احتجت مساعدة إضافية</p>
         </div>
         
-        <h2 class="section-title">وسائل التواصل</h2>
-        
-        <a href="tel:01093130120" style="text-decoration: none; color: inherit;">
-            <div class="contact-card">
-                <div class="icon-container phone-icon">
-                    <i class="fas fa-phone" style="color: #4caf50;"></i>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">كيف يمكنني حجز سكن طلابي؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
-                <div class="contact-details">
-                    <h3>اتصل بنا</h3>
-                    <p>01093130120</p>
-                </div>
-                <div class="arrow-icon">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-            </div>
-        </a>
-        
-        <a href="https://wa.me/201093130120" style="text-decoration: none; color: inherit;">
-            <div class="contact-card">
-                <div class="icon-container whatsapp-icon">
-                    <i class="fab fa-whatsapp" style="color: #25d366;"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>واتساب</h3>
-                    <p>+201093130120</p>
-                </div>
-                <div class="arrow-icon">
-                    <i class="fas fa-chevron-left"></i>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        يمكنك الحجز من خلال الضغط على السكن المناسب لك من الصفحة الرئيسية، ثم اختيار الغرفة المناسبة والضغط على زر "حجز". ستحتاج لتسجيل الدخول أو إنشاء حساب جديد إذا لم يكن لديك حساب مسبقاً.
+                    </div>
                 </div>
             </div>
-        </a>
-        
-        <a href="mailto:elsahm.arish@gmail.com" style="text-decoration: none; color: inherit;">
-            <div class="contact-card">
-                <div class="icon-container email-icon">
-                    <i class="far fa-envelope" style="color: #f44336;"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>البريد الإلكتروني</h3>
-                    <p>elsahm.arish@gmail.com</p>
-                </div>
-                <div class="arrow-icon">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-            </div>
-        </a>
-        
-        <a href="https://www.facebook.com/elsahm.arish" target="_blank" style="text-decoration: none; color: inherit;">
-            <div class="contact-card">
-                <div class="icon-container facebook-icon">
-                    <i class="fab fa-facebook-f" style="color: #1877f2;"></i>
-                </div>
-                <div class="contact-details">
-                    <h3>فيسبوك</h3>
-                    <p>تابعنا على فيسبوك</p>
-                </div>
-                <div class="arrow-icon">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-            </div>
-        </a>
-        
-        <div class="developer-section">
-            <h2 class="section-title">تصميم وتطوير</h2>
-            <img src="https://i.ibb.co/gLdV6nLr/scaled-1000165177.jpg" alt="المطوّر" class="developer-image">
-            <h3 class="developer-name">م. اسلام زايد</h3>
             
-            <div class="social-icons">
-                <a href="tel:01003193622" class="social-icon phone-social">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="https://wa.me/201003193622" class="social-icon whatsapp-social">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.facebook.com/eslammosalah" target="_blank" class="social-icon facebook-social">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/eslamz11/" target="_blank" class="social-icon instagram-social">
-                    <i class="fab fa-instagram"></i>
-                </a>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">ما هي طرق الدفع المتاحة؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        يمكنك الدفع من خلال: فودافون كاش وإنستا باي فقط. جميع المعاملات المالية مؤمنة وتستخدم تشفير SSL بنسبة 128 بت.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">كيف يمكنني شحن رصيدي؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        يمكنك شحن رصيدك من خلال زيارة صفحة "المحفظة" أو من خلال الضغط على أيقونة الرصيد في أعلى التطبيق. ثم اختيار طريقة الدفع المناسبة وإتباع التعليمات لإتمام عملية الشحن.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">هل يمكنني الحجز لصديقي؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        نعم، يمكنك الحجز لصديق من خلال إضافة بياناته أثناء عملية الحجز، ولكن يجب أن يكون لديك رصيد كافي لإتمام الحجز. يمكنك حجز ما يصل إلى 5 أشخاص في عملية حجز واحدة.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">ما هي سياسة الإلغاء والاسترداد؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        سياسة الإلغاء والاسترداد تختلف حسب وقت الإلغاء:
+                        <ul>
+                            <li>إلغاء قبل 30 يوم من تاريخ الإقامة: استرداد 100% من المبلغ</li>
+                            <li>إلغاء قبل 15 يوم: استرداد 75% من المبلغ</li>
+                            <li>إلغاء قبل 7 أيام: استرداد 50% من المبلغ</li>
+                            <li>إلغاء خلال أقل من 7 أيام: لا يوجد استرداد</li>
+                        </ul>
+                        في حالات طارئة معينة، قد يتم النظر في استثناءات لهذه السياسة.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">كيف يمكنني إلغاء حجزي؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        يمكنك إلغاء الحجز من خلال الذهاب لصفحة "حجوزاتي" في قائمة حسابي، ثم الضغط على الحجز المراد إلغاؤه واختيار "إلغاء الحجز". يرجى ملاحظة أن سياسة الإلغاء تختلف حسب وقت الإلغاء وقرب موعد الإقامة.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">متى سأتمكن من استلام السكن؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        يمكنك استلام السكن في التاريخ المحدد للحجز بداية من الساعة 12 ظهراً. في حالة الرغبة في تسجيل الدخول المبكر، يرجى التواصل مع خدمة العملاء قبل 24 ساعة على الأقل وقد يخضع ذلك لرسوم إضافية حسب توفر الغرف.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">ما الخدمات المتوفرة في السكن الطلابي؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        تختلف الخدمات حسب نوع السكن المختار، لكن معظم المساكن توفر:
+                        <ul>
+                            <li>واي فاي عالي السرعة</li>
+                            <li>خدمات أمن على مدار 24 ساعة</li>
+                            <li>غرف مفروشة بالكامل</li>
+                            <li>مرافق غسيل الملابس</li>
+                            <li>مناطق مشتركة للدراسة والاسترخاء</li>
+                            <li>خدمات تنظيف دورية</li>
+                            <li>مواصلات للجامعة في بعض المواقع</li>
+                        </ul>
+                        يمكنك الاطلاع على تفاصيل الخدمات المتوفرة في صفحة كل سكن على حدة.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">هل يمكنني تغيير غرفتي بعد الحجز؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        نعم، يمكنك طلب تغيير الغرفة بعد الحجز، ولكن هذا يخضع لتوفر الغرف وقد تنطبق رسوم تغيير إضافية. يجب تقديم طلب التغيير قبل 7 أيام على الأقل من تاريخ الإقامة للنظر فيه. يمكنك التقدم بطلب التغيير من خلال التواصل مع خدمة العملاء.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">كيف يمكنني التواصل مع خدمة العملاء؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        يمكنك التواصل معنا من خلال:
+                        <ul>
+                            <li>الاتصال المباشر على رقم 01093130120 (من 9 صباحاً حتى 9 مساءً طوال أيام الأسبوع)</li>
+                            <li>البريد الإلكتروني: elsahm.arish@gmail.com</li>
+                            <li>الدردشة المباشرة داخل التطبيق</li>
+                            <li>عبر حساباتنا على وسائل التواصل الاجتماعي</li>
+                        </ul>
+                        فريق خدمة العملاء متاح دائماً للرد على استفساراتك والمساعدة في حل أي مشكلة قد تواجهها.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">كيف يمكنني تغيير كلمة المرور؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        يمكنك تغيير كلمة المرور من خلال الذهاب لإعدادات الحساب، ثم اختيار "تغيير كلمة المرور". ستحتاج لإدخال كلمة المرور الحالية ثم إدخال كلمة المرور الجديدة وتأكيدها. في حالة نسيان كلمة المرور الحالية، يمكنك استخدام خيار "نسيت كلمة المرور" في شاشة تسجيل الدخول.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">ما هي متطلبات حجز السكن الطلابي؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        لحجز سكن طلابي ستحتاج إلى:
+                        <ul>
+                            <li>حساب على التطبيق مع بيانات شخصية مكتملة</li>
+                            <li>صورة من البطاقة الشخصية أو جواز السفر</li>
+                            <li>إثبات القيد في الجامعة (كارنيه الجامعة أو خطاب قبول)</li>
+                            <li>سداد قيمة الحجز أو المقدمة المطلوبة</li>
+                        </ul>
+                        قد تختلف المتطلبات قليلاً حسب السكن والجامعة.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <div class="question-content">
+                        <div class="question-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="question-text">هل يمكنني استرداد أموالي بعد الحجز؟</div>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-text">
+                        نعم، يمكن استرداد الأموال وفقاً لسياسة الاسترداد والإلغاء المتبعة، ويعتمد ذلك على وقت الإلغاء وشروط الإقامة. يرجى مراجعة بند "ما هي سياسة الإلغاء والاسترداد؟" للتفاصيل الكاملة أو التواصل مع خدمة العملاء للحصول على معلومات أكثر تفصيلاً.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
